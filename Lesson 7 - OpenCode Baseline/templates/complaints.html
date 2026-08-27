@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Complaints Board</h1>
+
+{% for complaint in complaints %}
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between">
+    <strong>{{ complaint.agent_name }}</strong>
+    <span class="text-muted">{{ complaint.timestamp.strftime("%Y-%m-%d %H:%M UTC") }}</span>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ complaint.text }}</p>
+  </div>
+</div>
+{% endfor %}
+
+<hr class="my-5">
+
+<h2>File a Complaint</h2>
+<form method="post" action="/complaints" class="mt-3">
+  <div class="mb-3">
+    <label for="agent_name" class="form-label">Your name (or handle)</label>
+    <input type="text" class="form-control" id="agent_name" name="agent_name" required>
+  </div>
+  <div class="mb-3">
+    <label for="text" class="form-label">Your complaint</label>
+    <textarea class="form-control" id="text" name="text" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit Complaint</button>
+</form>
+{% endblock %}
