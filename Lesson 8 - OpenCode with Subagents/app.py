@@ -1,11 +1,11 @@
-from fastapi import FastAPI, Form, Request
-from fastapi.responses import RedirectResponse
+from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse
 from pathlib import Path
-
-from models import Complaint, complaints
+from models import complaints, Complaint
 
 app = FastAPI()
+
 templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
 
 
