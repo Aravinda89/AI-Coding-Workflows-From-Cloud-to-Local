@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1",
+        "apiKey": "lm-studio"
+      },
+      "models": {
+        "qwen2.5-coder-7b-instruct": {
+          "name": "Qwen2.5 Coder 7B Instruct (local)",
+          "tool_call": true
+        },
+        "qwen/qwen3-8b": {
+          "name": "Qwen3 8B (local)",
+          "tool_call": true
+        },
+        "gemma-4-e2b-it": {
+          "name": "Gemma E2B IT (local)",
+          "tool_call": true
+        }
+      }
+    }
+  }
+}

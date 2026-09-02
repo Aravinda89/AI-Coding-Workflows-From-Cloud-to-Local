@@ -1,7 +1,7 @@
 ---
 description: Generates code and implements tasks delegated to it
 mode: subagent
-model: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+model: lmstudio/qwen/qwen3-8b
 permission:
   read: allow
   edit: allow
